@@ -1,0 +1,26 @@
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,10mm,*,10mm,*}
+
+%\setmainfont{NanumGothic}
+\setmainfont{08SeoulNamsanM}
+
+\usepackage{ifthen}
+
+\parindent=0pt
+\pagestyle{empty}
+
+\newcommand{\guest}[3]{%
+\fbox{\begin{minipage}{.45\textwidth}
+\begin{flushright}
+    \vskip 1em
+    \LARGE{%
+        #1\\ % 줄바꿈을 \newlinew으로 하면 오른쪽 정렬이 안됨
+        #2\\
+        % 우펀번호가 없으면 비워둔다.
+        우) \ifthenelse{\equal{#3}{}}{\hspace{3.5em}}{#3}
+    }
+\end{flushright}
+\vskip 1em
+\end{minipage}}
+\vskip 1em
+}
